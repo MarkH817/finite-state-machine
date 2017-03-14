@@ -1,0 +1,33 @@
+{
+  "name": "finite-state-machine",
+  "version": "1.0.0",
+  "description": "Simulate and compare finite state machines",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkH817/finite-state-machine.git"
+  },
+  "keywords": [
+    "dfa",
+    "finite",
+    "state",
+    "machine",
+    "reduction",
+    "equality"
+  ],
+  "author": "Mark Hernandez <markedcode@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarkH817/finite-state-machine/issues"
+  },
+  "homepage": "https://github.com/MarkH817/finite-state-machine#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
