@@ -20,12 +20,10 @@ function readDFA (filename) {
 
   let dfa = {
     alphabet: [],
-    states: [],
+    states: {},
     start: null,
     accept: []
   }
-
-  console.log(statements)
 
   for (let i = 0; i < statements.length; i++) {
     let tempStatment = statements[i].split(':')
@@ -36,9 +34,10 @@ function readDFA (filename) {
         let states = tempStatment[1].trim().split(';')
 
         for (let j = 0; j < states.length; j++) {
-          dfa.states.push({
-            name: states[j].trim()
-          })
+          dfa.states[states[j].trim()] = {
+            accept: false,
+            transitions: {}
+          }
         }
         break
       case 'input_alphabet':
@@ -59,15 +58,28 @@ function readDFA (filename) {
 
         for (let j = 0; j < accepting.length; j++) {
           dfa.accept.push(accepting[j].trim())
+          dfa.states[accepting[j].trim()].accept = true
         }
         break
       case 'delta':
-        // TODO: Define this portion
         // Add to the transitions list for each states
         // in the dfa object
+        let deltas = tempStatment[1].trim().split(';')
+        let tempDelta
+        let tempInput
+
+        for (let j = 0; j < deltas.length; j++) {
+          tempDelta = deltas[j].trim().split('->')
+          tempInput = tempDelta[0].trim().split(',')
+
+          // Set the transitions in the states list
+          dfa.states[tempInput[0].trim()].transitions[tempInput[1].trim()] = tempDelta[1].trim()
+        }
         break
     }
   }
+
+  return dfa
 }
 
 module.exports = readDFA
