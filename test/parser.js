@@ -9,7 +9,7 @@ const expect = require('chai').expect
 let filePrimary = path.resolve(__dirname, 'data/M0.dfa')
 
 describe('Parser.js', () => {
-  describe('parser() Test 1', () => {
+  describe('parser() Test 0', () => {
     it('Parse M0', () => {
       let result = parse(filePrimary)
 
