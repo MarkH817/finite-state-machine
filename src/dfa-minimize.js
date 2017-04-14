@@ -1,5 +1,10 @@
 'use strict'
 
-module.exports = function () {
-  // TODO: Define this
+module.exports = (dfa) => {
+  // input: a DFA object
+  // output: minimized DFA object
+
+  // let states = dfa.states
+
+  // TODO: Use table method for dfa minimization
 }
