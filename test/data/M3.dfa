@@ -1,0 +1,7 @@
+# This DFA recognizes { x in {0,1}* | x contains the string 001 }
+
+states: a; b; c; d
+input_alphabet: 0; 1
+start_state: a
+accept_states: d
+delta: a,0 -> b; a,1 -> a; b,0 -> c; b,1 -> a; c,0 -> c; c,1 -> d; d,0 -> d; d,1 -> d
